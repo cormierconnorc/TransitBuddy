@@ -1,0 +1,32 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AgencySelectionActivity" >
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="20sp"
+        android:textColor="#ff33b5e5"
+        android:text="Select an agency:" />
+
+    <View
+   		android:layout_width="fill_parent"
+   		android:id="@+id/rule"
+   		android:layout_below="@+id/title"
+    	android:layout_height="1dp"
+    	android:background="#ff33b5e5" />
+
+    <ListView
+        android:id="@+id/agencyList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rule"
+        android:layout_centerHorizontal="true" >
+    </ListView>
+
+</RelativeLayout>

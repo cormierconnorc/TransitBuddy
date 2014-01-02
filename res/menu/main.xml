@@ -1,0 +1,32 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/changeAgency"
+        android:orderInCategory="0"
+        android:showAsAction="never"
+        android:title="Change Agency" />
+    
+    <item
+        android:id="@+id/selectModeOfTransport"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="Select Mode of Transport"/>
+
+    <item
+        android:id="@+id/selectNumStops"
+        android:orderInCategory="200"
+        android:showAsAction="never"
+        android:title="Set Number of Stops" />
+    
+    <item
+        android:id="@+id/selectBusRouteSetting"
+        android:orderInCategory="300"
+        android:showAsAction="never"
+        android:title="Show or Hide Bus Routes" />
+    
+    <item
+        android:id="@+id/changeMapType"
+        android:orderInCategory="500"
+        android:showAsAction="never"
+        android:title="Change Map Type" />
+</menu>

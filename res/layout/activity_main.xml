@@ -1,0 +1,113 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+
+    <LinearLayout
+        android:id="@+id/inputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center" 
+        android:weightSum="5">
+
+        <AutoCompleteTextView
+            android:id="@+id/destination"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="4" 
+            android:inputType="text"
+            android:imeOptions="actionDone"
+            android:singleLine="true"
+            android:hint="Enter destination here">
+	
+            <!-- <requestFocus android:layout_width="match_parent" /> -->
+        </AutoCompleteTextView>
+
+        <Button
+            android:id="@+id/goButton"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Go!" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/transitModeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/inputLayout"
+        android:layout_centerHorizontal="true" 
+        android:weightSum="2">
+
+        <ToggleButton
+            android:id="@+id/walkingButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-5dp"
+            android:layout_marginRight="-5dp"
+            android:layout_marginBottom="-4dp"
+            android:textOn="Walking" 
+            android:textOff="Walking"
+            android:layout_weight="1"/>
+
+        <ToggleButton
+            android:id="@+id/transitButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-5dp"
+            android:layout_marginRight="-5dp"
+            android:layout_marginBottom="-4dp"
+            android:textOn="Transit" 
+            android:textOff="Transit" 
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/viewTypeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/transitModeLayout"
+        android:layout_centerHorizontal="true" 
+        android:weightSum="2">
+
+        <ToggleButton
+            android:id="@+id/stepsListButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-5dp"
+            android:layout_marginRight="-5dp"
+            android:layout_marginTop="-4dp"
+            android:layout_marginBottom="-4dp"
+            android:textOn="Steps" 
+            android:textOff="Steps" 
+            android:layout_weight="1"/>
+
+        <ToggleButton
+            android:id="@+id/mapViewButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-5dp"
+            android:layout_marginRight="-5dp"
+            android:layout_marginTop="-4dp"
+            android:layout_marginBottom="-4dp"
+            android:textOn="Map" 
+            android:textOff="Map"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/viewTypeLayout"
+        android:id="@+id/selectedContentView"
+        android:layout_centerHorizontal="true" 
+        android:gravity="center_horizontal">
+    </RelativeLayout>
+
+</RelativeLayout>
