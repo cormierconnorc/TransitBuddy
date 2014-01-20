@@ -121,6 +121,10 @@ public class MainActivity extends FragmentActivity implements OnClickListener,
 			public void onTextChanged(CharSequence s, int start, int before,
 					int count)
 			{
+				//Ensure that the location client is already connected
+				if (!MainActivity.this.magicLocationTool.isConnected())
+					MainActivity.this.magicLocationTool.connect();
+				
 				Location loc = MainActivity.this.magicLocationTool.getLastLocation();
 				long timeSinceLastRequest = System.currentTimeMillis() - lastAutoCompleteRequestTime;
 				if (loc != null && timeSinceLastRequest >= API_REQUEST_DELAY && s.toString().length() >= MIN_API_TEXT_LENGTH)
@@ -822,7 +826,8 @@ public class MainActivity extends FragmentActivity implements OnClickListener,
 		super.onStart();
 		
 		//Connect
-		magicLocationTool.connect();
+		if (!magicLocationTool.isConnected())
+			magicLocationTool.connect();
 	}
 	
 	/**
@@ -832,7 +837,8 @@ public class MainActivity extends FragmentActivity implements OnClickListener,
 	public void onStop()
 	{
 		//Disconnect from play services
-		magicLocationTool.disconnect();
+		if (magicLocationTool.isConnected())
+			magicLocationTool.disconnect();
 		
 		super.onStop();
 	}
